@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: mp-team1-backend
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        show_sql: true
+        format_sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/team1?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: trungvinh
+    password: 29katarina
+  mail:
+    api:
+      public: becd65c71f9e44bee0b991f2615facdc
+      secret: a38b93f4b4cb942e7994f8d3d1cccbe2
+    client:
+      port: 3000
+      hostname: http://localhost
+      from: java.01.2024@gmail.com
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+firebase:
+  bucket-name: test-firebase-storage-d1b61.appspot.com
+  image-url: https://storage.googleapis.com/${firebase.bucket-name}/%s
+
+oauth:
+  google:
+    client-id: 1065242633621-enabnck6hkbji1uqku87deg59r1vsps2.apps.googleusercontent.com
+
+server:
+  port: 9040
+
+token:
+  expiration:
+    accessToken: 3600           # Access token expiration time: 604800 = 7 days (second)
+    refreshToken: 604800            # Forgot  password token expiration time: 900 = 15 minutes, 86400 = 24h (second)
+    forgotPasswordToken: 900    # Refresh token expiration time: 1209600000 = 14 days (second)
+  secret: 404E635266556A5435345538782F413F4428472B4B62506765765A4324  # Secret code
+  header: Authorization
